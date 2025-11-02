@@ -1,3 +1,5 @@
+import "./styles/calculator.css";
+import "./styles/theme.css";
 import Calculator from "./components/calculator.js";
 
 const calculator = new Calculator();
