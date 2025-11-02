@@ -5,24 +5,38 @@
 ## Задача
 
 Данный проект реализует простой веб-калькулятор, поддерживающий базовые арифметические операции: сложение, вычитание, умножение, деление, процент и смену знака числа.  
-[Ссылка на ТЗ](https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/edit?tab=t.0#heading=h.5dt3hghpa22f)
+Ссылка на ТЗ: https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/edit?tab=t.0#heading=h.5dt3hghpa22f
 
 ## Как запустить приложение
 
 1. Клонируйте репозиторий или скачайте файлы проекта.
-2. Откройте файл `index.html` в современном браузере (Chrome, Edge, Firefox) с поддержкой ES6-модулей.
-3. Калькулятор загрузится и готов к использованию — никаких дополнительных сборок или серверов не требуется.
+2. Установите зависимости:
+   bash
+   npm install
+   Для запуска в режиме разработки:
+   bash
+   Копировать код
+   npm run dev
+   После этого приложение будет доступно по адресу http://localhost:8080
 
-_Опционально_: можно использовать локальный сервер (например, VSCode Live Server):
+Для production-сборки:
+bash
+Копировать код
+npm run build
+После сборки проект будет находиться в папке dist/ (2 файла: index.html и минифицированный JS).
 
-```bash
-# Запуск локального сервера в папке проекта
+Также можно просто открыть index.html напрямую в браузере (Chrome, Edge, Firefox).
+
+Опционально: запуск через VSCode Live Server:
+bash
+Копировать код
 live-server
-```
 
 ## Структура проекта
 
 calculator/
+├── .husky/ # Git hooks (pre-commit: ESLint + Prettier)
+│ └── pre-commit
 ├── index.html # Главный HTML-файл
 ├── src/ # Исходный код приложения
 │ ├── app.js # Точка входа, обработка событий
@@ -32,14 +46,18 @@ calculator/
 │ │ └── math-operations.js # Математические функции: add, subtract, multiply, divide, percent, toggleSign
 │ └── styles/ # Стилизация
 │ └── calculator.css # Визуальное оформление калькулятора
+├── .gitignore # Исключения для Git (node_modules, dist и др.)
 ├── dist/ # Production-сборка (генерируется автоматически)
 ├── webpack.config.js # Конфигурация сборки
-├── package.json # Зависимости и скрипты
+├── eslint.config.mjs # Конфигурация ESLint
+├── package.json # Зависимости и скрипты npm
+├── package-lock.json
 └── README.md # Документация
 
 ## Технологии
 
-Чистый JavaScript (без фреймворков)
+Чистый JavaScript
 CSS Grid/Flexbox для адаптивного дизайна
 Webpack для сборки и оптимизации
-ESLint для проверки кода
+ESLint + Prettier — единый стиль и качество кода
+Husky + lint-staged — автоматическая проверка кода при коммите

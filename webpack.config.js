@@ -23,5 +23,8 @@ export default {
     open: true,
     port: 8080,
   },
+  optimization: {
+    minimize: true,
+  },
   mode: "development",
 };

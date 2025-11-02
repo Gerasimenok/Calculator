@@ -5,6 +5,7 @@ const calculator = new Calculator();
 const display = document.getElementById("display");
 const displayText = document.getElementById("display-text");
 const buttons = document.querySelectorAll(".button");
+const themeButton = document.getElementById("theme-toggle");
 
 function updateDisplay() {
   displayText.textContent = calculator.getDisplay();
@@ -43,4 +44,9 @@ buttons.forEach((button) => {
 
     updateDisplay();
   });
+});
+
+themeButton.addEventListener("click", () => {
+  const isDark = document.body.classList.toggle("dark-theme");
+  themeButton.textContent = isDark ? "☀️" : "🌙";
 });
