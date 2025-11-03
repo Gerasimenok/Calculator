@@ -5,7 +5,7 @@
 ## Задача
 
 Данный проект реализует простой веб-калькулятор, поддерживающий базовые арифметические операции: сложение, вычитание, умножение, деление, процент и смену знака числа.  
-Ссылка на ТЗ: https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/edit?tab=t.0#heading=h.5dt3hghpa22f
+[Ссылка на ТЗ](https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/edit?tab=t.0#heading=h.5dt3hghpa22f)
 
 ## Как запустить приложение
 
@@ -16,66 +16,48 @@ git clone https://github.com/Gerasimenok/Calculator.git
 cd Calculator
 
 2. Установите зависимости:
-npm install
+   npm install
 
 3. Запустите проект в режиме разработки:
-npm start
+   npm start
 
 Приложение откроется по адресу http://localhost:8080
 
 4. Для сборки production-версии:
-npm run build
+   npm run build
 
 Готовые файлы будут в папке dist/
 
 ## Структура проекта
 
-calculator/
+src/ — исходные файлы проекта
 
-├── .husky/ # Git hooks (pre-commit: ESLint + Prettier)
+- app.js — точка входа, логика работы интерфейса
 
-│ └── pre-commit
+- components/calculator.js — основной класс калькулятора
 
-├── index.html # Главный HTML-файл
+- utils/math-operations.js — функции для вычислений
 
-├── src/ # Исходный код приложения
+- styles/ — файлы стилей (calculator.css, theme.css)
 
-│ ├── app.js # Точка входа, обработка событий
+index.html — шаблон страницы
 
-│ ├── components/ # Основные классы приложения
+webpack.config.js — конфигурация сборки
 
-│ │ └── calculator.js # Класс Calculator: управление состоянием, вычисления
+eslint.config.mjs — настройка линтера
 
-│ ├── utils/ # Вспомогательные функции
+.husky/ — git-хуки для проверки кода перед коммитом
 
-│ │ └── math-operations.js # Математические функции: add, subtract, multiply, divide, percent, toggleSign
-
-│ └── styles/ # Стилизация
-
-│ └── calculator.css # Визуальное оформление калькулятора
-
-├── .gitignore # Исключения для Git (node_modules, dist и др.)
-
-├── dist/ # Production-сборка (генерируется автоматически)
-
-├── webpack.config.js # Конфигурация сборки
-
-├── eslint.config.mjs # Конфигурация ESLint
-
-├── package.json # Зависимости и скрипты npm
-
-├── package-lock.json
-
-└── README.md # Документация
+dist/ — итоговая сборка (создаётся автоматически)
 
 ## Технологии
 
-Чистый JavaScript
+- JavaScript
 
-CSS Grid/Flexbox для адаптивного дизайна
+- CSS Grid / Flexbox
 
-Webpack для сборки и оптимизации
+- Webpack
 
-ESLint + Prettier — единый стиль и качество кода
+- ESLint + Prettier
 
-Husky + lint-staged — автоматическая проверка кода при коммите
+- Husky + lint-staged
